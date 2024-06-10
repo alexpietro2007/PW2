@@ -1,13 +1,20 @@
-import exphbs from 'express-handlebars'
-import express from 'express'
+import exphbs from 'express-handlebars';
+import express from 'express';
 
-const app = express()
+const app = express();
 
-app.engine('handlebars', exphbs.engine())
-app.set('View engine', 'handlebars')
+// Configure o Handlebars como mecanismo de modelo
+app.engine('handlebars', exphbs.engine());
+app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res){
-    res.render('home')
-})
+app.get('/', (req, res) => {
+    res.render("home");
+});
 
-app.listen(3000, console.log("app rodando na porta 3000"))
+app.get('/pg2', (req, res) => {
+    res.render("page2");
+});
+
+app.listen(3000, () => {
+    console.log("App rodando na porta 3000");
+});
