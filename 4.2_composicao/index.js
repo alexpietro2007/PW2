@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
     }
 
     const palavra = "teste"
-    const auth = true
+    const auth = false
     
     res.render("home", {user: user, palavra, auth})
 })
 
-app.listen(3000, () => console.log("App rodando na porta 3000"))
+app.listen(3000, () => console.log("App rodando na porta localhost:3000"))
